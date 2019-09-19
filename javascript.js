@@ -1,16 +1,19 @@
-var a = 5;
+var array = [1,2,3,4,5];
+var square = function(a) { return a * a };
 
-function func() {
-    var b = 10;
-    for(i = 0; i < 10; i++) {
-        var x = 1;
-        let y = 1;
-    }
-    console.log(x);
-    // console.log(y);
-    console.log(a);
+array.map(number => console.log(square(number)));
+
+var sum = function(a,b) { return a + b };
+
+(function() {
+    var sumOfNumbers = sum(4, 5);
+
+    console.log(sumOfNumbers);
+
+})();
+
+var timesTwo = (number) => {
+    return number * 2;
 }
 
-// console.log(b);
-
-func();
+console.log(timesTwo(5));
