@@ -1,16 +1,44 @@
-var a = 5;
+var promise = new Promise(function(resolve, reject) {
+    setTimeout(function() {
+        let number = Math.random()*5;
+        if (number > 2) {
+            resolve('Success!');
+        } else {
+            reject('Error!')
+        }
+    }, 1000);
+})
 
-function func() {
-    var b = 10;
-    for(i = 0; i < 10; i++) {
-        var x = 1;
-        let y = 1;
-    }
-    console.log(x);
-    // console.log(y);
-    console.log(a);
-}
+promise.then(function(value) {
+    console.log(value);
+}).catch(function(reason) {
+    console.log(reason);
+});
 
-// console.log(b);
+var promise2 = new Promise(function(resolve, reject) {
+    setTimeout(function() {
+        let number = Math.random()*5;
+        if (number > 2) {
+            resolve('Success!');
+        } else {
+            reject('Error!')
+        }
+    }, 1000);
+})
 
-func();
+var promise3 = new Promise(function(resolve, reject) {
+    setTimeout(function() {
+        let number = Math.random()*5;
+        if (number > 2) {
+            resolve('Success!');
+        } else {
+            reject('Error!')
+        }
+    }, 1000);
+})
+
+Promise.all([promise2, promise3]).then(function(values) {
+    console.log(values);
+}).catch(function(reason) {
+    console.log(reason);
+})
